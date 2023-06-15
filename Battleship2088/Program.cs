@@ -4,14 +4,9 @@ using Battleship2088.Core.Models.Enums;
 using Battleship2088.Utils;
 
 Console.WriteLine("Welcome to Battleship 2088!");
-Console.WriteLine("  ______       _   _   _           _     _         _____  _____ _____  _____ ");
-Console.WriteLine("  | ___ \\     | | | | | |         | |   (_)       / __  \\|  _  |  _  ||  _  |");
-Console.WriteLine("  | |_/ / __ _| |_| |_| | ___  ___| |__  _ _ __   `' / /'| |/' |\\ V /  \\ V / ");
-Console.WriteLine("  | ___ \\/ _` | __| __| |/ _ \\/ __| '_ \\| | '_ \\    / /  |  /| |/ _ \\  / _ \\ ");
-Console.WriteLine("  | |_/ / (_| | |_| |_| |  __/\\__ \\ | | | | |_) | ./ /___\\ |_/ / |_| || |_| |");
-Console.WriteLine("  \\____/ \\__,_|\\__|\\__|_|\\___||___/_| |_|_| .__/  \\_____/ \\___/\\_____/\\_____/");
-Console.WriteLine("                                          | |                                ");
-Console.WriteLine("                                          |_|                                ");
+
+DrawLogo();
+
 var game = new Game(new Grid(), new InputParser(), new Randomizer());
 
 // Main game loop
@@ -55,3 +50,15 @@ while (!game.IsGameOver())
 
 Console.WriteLine("Congratulations! You sunk all the ships.");
 Console.ReadLine();
+
+void DrawLogo()
+{
+    Console.WriteLine("  ______       _   _   _           _     _         _____  _____ _____  _____ ");
+    Console.WriteLine("  | ___ \\     | | | | | |         | |   (_)       / __  \\|  _  |  _  ||  _  |");
+    Console.WriteLine("  | |_/ / __ _| |_| |_| | ___  ___| |__  _ _ __   `' / /'| |/' |\\ V /  \\ V / ");
+    Console.WriteLine("  | ___ \\/ _` | __| __| |/ _ \\/ __| '_ \\| | '_ \\    / /  |  /| |/ _ \\  / _ \\ ");
+    Console.WriteLine("  | |_/ / (_| | |_| |_| |  __/\\__ \\ | | | | |_) | ./ /___\\ |_/ / |_| || |_| |");
+    Console.WriteLine("  \\____/ \\__,_|\\__|\\__|_|\\___||___/_| |_|_| .__/  \\_____/ \\___/\\_____/\\_____/");
+    Console.WriteLine("                                          | |                                ");
+    Console.WriteLine("                                          |_|                                ");
+}
