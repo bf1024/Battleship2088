@@ -13,14 +13,14 @@ namespace Battleship2088.Utils
             }
 
             var x = char.ToUpper(input[0]) - 'A';
-            if (x < 0 || x >= 10)
+            if (x < 0 || x >= Grid.GridSize)
             {
-                throw new ArgumentException($"Invalid column '{input[0]}'. Expected a letter between A and J.");
+                throw new ArgumentException($"Invalid column '{input[0]}'. Expected a letter between A and {(char)(Grid.GridSize + 'A')}.");
             }
 
-            if (!int.TryParse(input.Substring(1), out var y) || y < 1 || y > 10)
+            if (!int.TryParse(input.Substring(1), out var y) || y < 1 || y > Grid.GridSize)
             {
-                throw new ArgumentException($"Invalid row '{input.Substring(1)}'. Expected a number between 1 and 10.");
+                throw new ArgumentException($"Invalid row '{input.Substring(1)}'. Expected a number between 1 and {Grid.GridSize}.");
             }
 
             return new Coordinate(x, y - 1);

@@ -6,7 +6,7 @@ namespace Battleship2088.Core.Models
 {
     public class Grid : IGrid
     {
-        private const int GridSize = 10;
+        public static int GridSize = 10;
         private readonly IShip[,] grid;
         private readonly HashSet<Coordinate> hits = new HashSet<Coordinate>();
 
@@ -103,7 +103,7 @@ namespace Battleship2088.Core.Models
                     {
                         Console.Write(" .");
                     }
-                    else if(hits.Contains(new Coordinate(i,j)))
+                    else if (hits.Contains(new Coordinate(i,j)))
                     {
                         Console.Write(" *");
                     }
