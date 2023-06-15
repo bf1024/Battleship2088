@@ -10,13 +10,13 @@ namespace Battleship2088.Tests
     [TestFixture]
     public class GameTests
     {
-        private Mock<IGrid> mockGrid;
-        private Mock<IInputParser> mockInputParser;
-        private Mock<IRandomizer> mockRandomizer;
-        private Game game;
-        private Queue<Coordinate> coordinatesQueue;
+        private Mock<IGrid>? mockGrid;
+        private Mock<IInputParser>? mockInputParser;
+        private Mock<IRandomizer>? mockRandomizer;
+        private Game? game;
+        private Queue<Coordinate>? coordinatesQueue;
         private Coordinate coordinate1;
-        private string input;
+        private string? input;
 
         [SetUp]
         public void Setup()
@@ -52,27 +52,27 @@ namespace Battleship2088.Tests
         {
             var hitResult = HitResult.Hit;
 
-            mockGrid.Setup(m => m.Shoot(coordinate1)).Returns(hitResult);
+            mockGrid!.Setup(m => m.Shoot(coordinate1)).Returns(hitResult);
 
-            var result = game.PlayTurn(input);
+            var result = game!.PlayTurn(input!);
 
             Assert.That(result, Is.EqualTo(hitResult));
-            mockInputParser.Verify(m => m.Parse(input), Times.Once);
+            mockInputParser!.Verify(m => m.Parse(input!), Times.Once);
             mockGrid.Verify(m => m.Shoot(coordinate1), Times.Once);
         }
 
         [Test]
         public void IsGameOver_ShipsNotSunk_ReturnsFalse()
         {
-            mockGrid.Setup(m => m.AllShipsSunk()).Returns(false);
-            Assert.IsFalse(game.IsGameOver());
+            mockGrid!.Setup(m => m.AllShipsSunk()).Returns(false);
+            Assert.IsFalse(game!.IsGameOver());
         }
 
         [Test]
         public void IsGameOver_ShipsSunk_ReturnsTrue()
         {
             mockGrid.Setup(m => m.AllShipsSunk()).Returns(true);
-            Assert.IsTrue(game.IsGameOver());
+            Assert.IsTrue(game!.IsGameOver());
         }
     }
 }

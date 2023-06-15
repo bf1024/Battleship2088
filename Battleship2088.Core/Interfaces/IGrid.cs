@@ -12,6 +12,7 @@ namespace Battleship2088.Core.Interfaces
     {
         HitResult Shoot(Coordinate target);
         bool AllShipsSunk();
+        void DrawGrid();
         bool PlaceShip(IShip ship, Coordinate start, bool isVertical);
     }
 }

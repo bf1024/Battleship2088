@@ -84,7 +84,15 @@ namespace Battleship2088.Core.Models
 
         public void DrawGrid()
         {
-            Console.WriteLine("   1 2 3 4 5 6 7 8 9 10");
+            Console.Write("  ");
+
+            for (int i = 0; i < GridSize; i++)
+            {
+              Console.Write($" {i + 1}");
+            }
+
+            Console.WriteLine();
+                
             for (int i = 0; i < GridSize; i++)
             {
                 Console.Write($"{(char)(i + 'A')} ");

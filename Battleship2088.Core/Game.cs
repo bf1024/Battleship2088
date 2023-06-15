@@ -45,6 +45,11 @@ namespace Battleship2088.Core
             return _grid.Shoot(coordinate);
         }
 
+        public void DrawGrid()
+        {
+           _grid.DrawGrid();
+        }
+
         public bool IsGameOver()
         {
             return _grid.AllShipsSunk();

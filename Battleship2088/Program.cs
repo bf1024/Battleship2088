@@ -4,8 +4,7 @@ using Battleship2088.Core.Models.Enums;
 using Battleship2088.Utils;
 
 Console.WriteLine("Welcome to Battleship 2088!");
-var grid = new Grid();
-var game = new Game(grid, new InputParser(), new Randomizer());
+var game = new Game(new Grid(), new InputParser(), new Randomizer());
 
 // Main game loop
 while (!game.IsGameOver())
@@ -17,7 +16,7 @@ while (!game.IsGameOver())
     {
         if (input == "draw")
         {
-            grid.DrawGrid();
+            game.DrawGrid();
         }
         else
         {
