@@ -7,13 +7,13 @@
 
         public Coordinate(int x, int y)
         {
-            if (x < 0 || x >= 10)
+            if (x < 0 || x >= Grid.GridSize)
             {
-                throw new ArgumentOutOfRangeException(nameof(x), "X-coordinate must be between 0 and 9.");
+                throw new ArgumentOutOfRangeException(nameof(x), $"X-coordinate must be between 0 and {Grid.GridSize}.");
             }
-            if (y < 0 || y >= 10)
+            if (y < 0 || y >= Grid.GridSize)
             {
-                throw new ArgumentOutOfRangeException(nameof(y), "Y-coordinate must be between 0 and 9.");
+                throw new ArgumentOutOfRangeException(nameof(y), $"Y-coordinate must be between 0 and {Grid.GridSize}.");
             }
             X = x;
             Y = y;

@@ -1,5 +1,6 @@
 ﻿using Battleship2088.Core.Interfaces;
 using Battleship2088.Core.Models.Enums;
+using Microsoft.Extensions.Configuration;
 using System.Numerics;
 
 namespace Battleship2088.Core.Models
@@ -10,8 +11,9 @@ namespace Battleship2088.Core.Models
         private readonly IShip[,] grid;
         private readonly HashSet<Coordinate> hits = new HashSet<Coordinate>();
 
-        public Grid()
+        public Grid(IConfiguration config)
         {
+            GridSize = Int32.Parse(config.GetSection("Config:GridSize")?.Value!);
             grid = new IShip[GridSize, GridSize];
         }
 
