@@ -1,7 +1,6 @@
 ﻿using Battleship2088.Core.Interfaces;
 using Battleship2088.Core.Models;
 using Battleship2088.Core.Models.Enums;
-using Battleship2088.Utils;
 
 namespace Battleship2088.Core
 {
