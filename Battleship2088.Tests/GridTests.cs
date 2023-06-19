@@ -17,7 +17,7 @@ namespace Battleship2088.Tests
         public void Setup()
         {
             var mockConfiguration = new Mock<IConfiguration>();
-            mockConfiguration.Setup(config => config["Config:GridSize"]).Returns("10");
+            mockConfiguration.Setup(config => config.GetSection("Config:GridSize").Value).Returns("10");
 
             grid = new Grid(mockConfiguration.Object);
         }
